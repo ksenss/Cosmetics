@@ -1,0 +1,40 @@
+﻿@model List<Cosmetics.Models.Product>
+
+<h1 class="text-center mb-4">Product List</h1>
+
+@if (Model.Any())
+{
+    <p class="fst-italic text-center">Count of Products: <strong>@Model.Count</strong></p>
+
+    <div class="container text-center">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var product in Model)
+            {
+                <div class="col">
+                    <div class="card shadow-sm border-light">
+                        @* Uncomment and use a real image URL if available *@
+                        @* <img src="https://m.media-amazon.com/images/I/51vfRTf1ACL.jpg" class="card-img-top" alt="@product.Name"> *@
+
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text text-muted">
+                                @product.Category
+                            </p>
+                            <p class="card-text">
+                                <span class="badge bg-danger">@product.Price grn</span>
+                            </p>
+                                   
+                            <a asp-action="Details" asp-route-id="@product.Id" >Show Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="text-center mt-4">
+        <p class="alert alert-warning">No products available yet!</p>
+    </div>
+}
