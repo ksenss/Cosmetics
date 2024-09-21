@@ -1,4 +1,4 @@
-﻿@model List<Cosmetics.Models.Product>
+﻿@model List<data_access.Entities.Product>
 
 <h1 class="text-center mb-4">Product List</h1>
 
@@ -23,8 +23,15 @@
                             <p class="card-text">
                                 <span class="badge bg-danger">@product.Price grn</span>
                             </p>
-                                   
-                            <a asp-action="Details" asp-route-id="@product.Id" >Show Details</a>
+                            <p class="card-text">
+                                <a class="badge rounded-pill bg-dark" asp-action="Details" asp-route-id="@product.Id">Show Details</a>
+                            </p>
+                            <p class="card-text">
+                                <a class="badge rounded-pill bg-dark"  asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                            </p>
+
+          
+                           
                         </div>
                     </div>
                 </div>
