@@ -13,7 +13,7 @@
                 <div class="col">
                     <div class="card shadow-sm border-light">
                         @* Uncomment and use a real image URL if available *@
-                        @* <img src="https://m.media-amazon.com/images/I/51vfRTf1ACL.jpg" class="card-img-top" alt="@product.Name"> *@
+                        <img src="https://m.media-amazon.com/images/I/51vfRTf1ACL.jpg" class="card-img-top" alt="@product.Name">
 
                         <div class="card-body">
                             <h5 class="card-title">@product.Name</h5>
@@ -27,21 +27,28 @@
                                 <a class="badge rounded-pill bg-dark" asp-action="Details" asp-route-id="@product.Id">Show Details</a>
                             </p>
                             <p class="card-text">
+                                <a class="badge rounded-pill bg-dark" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                            </p>
+                           
+                            <p class="card-text">
                                 <a class="badge rounded-pill bg-dark"  asp-action="Delete" asp-route-id="@product.Id">Delete</a>
                             </p>
 
-          
-                           
                         </div>
+                      
                     </div>
                 </div>
             }
+        </div>
+        <div class="mt-4">
+           
+            <a asp-action="Create" class="neon">Create New Product</a>
         </div>
     </div>
 }
 else
 {
-    <div class="text-center mt-4">
+    <div class="text-center mt-10">
         <p class="alert alert-warning">No products available yet!</p>
     </div>
 }
